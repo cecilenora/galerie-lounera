@@ -202,7 +202,7 @@ img {
     padding: 0 2%;
 }
 
-/* Conteneur de chaque tableau */
+/* Conteneur commun de chaque tableau (Collection + Artiste) */
 .art-item {
     position: relative;
     overflow: hidden;
@@ -213,17 +213,12 @@ img {
     grid-column: 1/-1;
 }
 
-/* Image du tableau */
-.art-item img {
+/* Image par défaut dans la grille collection */
+.art-grid .art-item img {
     width: 100%;
     height: clamp(290px, 40vw, 570px);
     object-fit: cover;
     transition: filter 0.4s ease, transform 0.4s ease;
-}
-
-.art-item.wide img {
-    height: auto;
-    max-height: 480px;
 }
 
 /* Le bloc de texte (Nom + Prix) caché par défaut */
@@ -296,9 +291,13 @@ img {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.artist img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+/* Adaptation de l'effet d'animation et de la taille pour Partogenèse dans la section Artiste */
+.artist .art-item img {
+    width: 100%;
+    height: auto;
+    max-height: 410px;
+    object-fit: cover;
+    transition: filter 0.4s ease, transform 0.4s ease;
 }
 
 /* --- CONTACT & RESEAUX SOCIAUX --- */
