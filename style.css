@@ -1,7 +1,7 @@
 /* Galerie LOUNERA — styles du site */
 
 :root {
-    --police-principale: "Barlow Condensed", Arial, sans-serif;
+    --police-principale: "Alumni Sans", Arial, sans-serif;
 }
 
 *, *::before, *::after {
@@ -16,7 +16,7 @@ body {
     margin: 0;
     font-family: var(--police-principale);
     color: #161616;
-    font-size: clamp(19px, 2vw, 27px);
+    font-size: clamp(21px, 2.2vw, 29px); /* Légèrement ajusté pour mettre en valeur Alumni Sans */
 }
 
 a {
@@ -69,10 +69,12 @@ img {
     gap: clamp(12px, 2vw, 36px);
 }
 
-/* Animation sur les liens du menu */
+/* Animation et police Anton sur les liens du menu */
 .header nav a {
-    font-weight: 800;
-    font-size: clamp(16px, 2vw, 29px);
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-size: clamp(18px, 2.2vw, 30px);
+    letter-spacing: 0.5px;
     position: relative;
     transition: color 0.3s ease;
 }
@@ -148,7 +150,7 @@ img {
 .concept h2, .artist h2 {
     font-size: clamp(35px, 4vw, 65px);
     line-height: 1.05;
-    font-weight: 800;
+    font-weight: 700;
     margin: 0 0 20px;
 }
 
@@ -187,7 +189,7 @@ img {
     color: #aaa;
     font-size: clamp(34px, 3.5vw, 56px);
     margin: 0;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .collection .subtitle {
@@ -241,14 +243,14 @@ img {
 }
 
 .art-name {
-    font-size: clamp(24px, 3vw, 42px);
-    font-weight: 800;
+    font-size: clamp(26px, 3.5vw, 46px);
+    font-weight: 700;
     margin-bottom: 10px;
     letter-spacing: 1px;
 }
 
 .art-price {
-    font-size: clamp(20px, 2.5vw, 34px);
+    font-size: clamp(22px, 3vw, 38px);
     font-weight: 300;
 }
 
