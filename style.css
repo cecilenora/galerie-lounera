@@ -166,15 +166,21 @@ img {
 
 .concept img {
     width: 100%;
-    height: auto; /* Corrigé pour éviter l'écrasement du texte */
+    height: auto;
     max-height: 320px;
     object-fit: cover;
     margin-bottom: 30px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* --- COLLECTION & ANIMATIONS PEINTURES --- */
+.concept img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* --- COLLECTION & EFFET FLOU + NOM + PRIX --- */
 .collection {
-    padding: 60px 4% 100px; /* Ajout d'espace en haut pour éviter le chevauchement */
+    padding: 60px 4% 100px;
 }
 
 .collection h2 {
@@ -196,27 +202,69 @@ img {
     padding: 0 2%;
 }
 
-/* Animation douce au survol des peintures */
-.art-grid img, .concept img, .artist img {
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+/* Conteneur de chaque tableau */
+.art-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
 }
 
-.art-grid img:hover, .concept img:hover, .artist img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+.art-item.wide {
+    grid-column: 1/-1;
 }
 
-.art-grid img {
+/* Image du tableau */
+.art-item img {
     width: 100%;
     height: clamp(290px, 40vw, 570px);
     object-fit: cover;
+    transition: filter 0.4s ease, transform 0.4s ease;
 }
 
-.art-grid .wide {
-    grid-column: 1/-1;
+.art-item.wide img {
     height: auto;
     max-height: 480px;
-    object-fit: cover;
+}
+
+/* Le bloc de texte (Nom + Prix) caché par défaut */
+.art-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    text-align: center;
+    padding: 20px;
+}
+
+.art-name {
+    font-size: clamp(24px, 3vw, 42px);
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.art-price {
+    font-size: clamp(20px, 2.5vw, 34px);
+    font-weight: 300;
+}
+
+/* L'EFFET AU SURVOL : Flou sur l'image + zoom + apparition du texte */
+.art-item:hover img {
+    filter: blur(8px);
+    transform: scale(1.04);
+}
+
+.art-item:hover .art-overlay {
+    opacity: 1;
 }
 
 /* --- ARTIST --- */
@@ -245,6 +293,12 @@ img {
     width: 100%;
     max-height: 410px;
     object-fit: cover;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.artist img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* --- CONTACT & RESEAUX SOCIAUX --- */
@@ -265,7 +319,7 @@ img {
 }
 
 .contact .social {
-    margin-top: 50px; /* Réduit pour éviter d'être trop bas sur grand écran */
+    margin-top: 50px;
 }
 
 /* Style des icônes réseaux sociaux */
@@ -391,10 +445,10 @@ footer {
     }
 
     .collection {
-        padding: 50px 5%; /* Remet de l'air pour éviter la collision du texte bleu */
+        padding: 50px 5%;
     }
 
     .contact .social {
-        margin-top: 30px; /* Supprime le gros espace vide sur mobile */
+        margin-top: 30px;
     }
 }
