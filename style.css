@@ -16,7 +16,7 @@ body {
     margin: 0;
     font-family: var(--police-principale);
     color: #161616;
-    font-size: clamp(21px, 2.2vw, 29px); /* Légèrement ajusté pour mettre en valeur Alumni Sans */
+    font-size: clamp(21px, 2.2vw, 29px);
 }
 
 a {
@@ -38,6 +38,7 @@ img {
     padding: 18px 3%;
     gap: 24px;
     background: #fff;
+    border-bottom: 1px solid #eee;
 }
 
 .brand {
@@ -51,16 +52,10 @@ img {
     white-space: nowrap;
 }
 
-.mark {
-    background: #8cb9c6;
-    color: #111;
-    border-radius: 50%;
-    width: 70px;
+.logo-img {
     height: 70px;
-    display: grid;
-    place-items: center;
-    font-family: Georgia, serif;
-    font-style: italic;
+    width: auto;
+    display: block;
 }
 
 .header nav {
@@ -69,12 +64,11 @@ img {
     gap: clamp(12px, 2vw, 36px);
 }
 
-/* Animation et police Anton sur les liens du menu */
 .header nav a {
     font-family: "Anton", sans-serif;
     font-weight: 400;
-    font-size: clamp(18px, 2.2vw, 30px);
-    letter-spacing: 0.5px;
+    font-size: clamp(18px, 2.2vw, 32px);
+    letter-spacing: 1px;
     position: relative;
     transition: color 0.3s ease;
 }
@@ -204,7 +198,6 @@ img {
     padding: 0 2%;
 }
 
-/* Conteneur commun de chaque tableau (Collection + Artiste) */
 .art-item {
     position: relative;
     overflow: hidden;
@@ -215,7 +208,6 @@ img {
     grid-column: 1/-1;
 }
 
-/* Image par défaut dans la grille collection */
 .art-grid .art-item img {
     width: 100%;
     height: clamp(290px, 40vw, 570px);
@@ -223,7 +215,6 @@ img {
     transition: filter 0.4s ease, transform 0.4s ease;
 }
 
-/* Le bloc de texte (Nom + Prix) caché par défaut */
 .art-overlay {
     position: absolute;
     top: 0;
@@ -254,7 +245,6 @@ img {
     font-weight: 300;
 }
 
-/* L'EFFET AU SURVOL : Flou sur l'image + zoom + apparition du texte */
 .art-item:hover img {
     filter: blur(8px);
     transform: scale(1.04);
@@ -293,7 +283,6 @@ img {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Adaptation de l'effet d'animation et de la taille pour Partogenèse dans la section Artiste */
 .artist .art-item img {
     width: 100%;
     height: auto;
@@ -323,7 +312,6 @@ img {
     margin-top: 50px;
 }
 
-/* Style des icônes réseaux sociaux */
 .reseaux-sociaux {
     display: flex;
     gap: 20px;
@@ -382,7 +370,7 @@ img {
     font-size: 15px;
 }
 
-/* --- FOOTER PROPRE --- */
+/* --- FOOTER --- */
 footer {
     text-align: center;
     padding: 25px;
@@ -403,8 +391,7 @@ footer {
         gap: 14px;
     }
 
-    .mark {
-        width: 50px;
+    .logo-img {
         height: 50px;
     }
 
@@ -441,7 +428,7 @@ footer {
         gap: 15px;
     }
 
-    .art-grid img {
+    .art-grid .art-item img {
         height: 250px;
     }
 
