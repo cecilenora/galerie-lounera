@@ -10,12 +10,11 @@
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Anton&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-  <link href="style.css?v=11" rel="stylesheet"/>
+  <link href="style.css?v=12" rel="stylesheet"/>
  </head>
  <body>
   <header class="header">
    <a class="brand" href="#accueil">
-    <!-- Logo redimensionné -->
     <img src="images/logo.png" alt="Logo Galerie Lounera" class="logo-img"/>
     <span>
      Galerie LOUNERA
@@ -85,7 +84,7 @@
     </div>
    </section>
    
-   <!-- SECTION COLLECTION (5 TABLEAUX, LE DERNIER EN .wide) -->
+   <!-- SECTION COLLECTION (5 TABLEAUX) -->
    <section class="collection" id="collection">
     <h2>
      NOTRE COLLECTION
@@ -127,7 +126,7 @@
       </div>
      </div>
 
-     <!-- Le 5ème tableau prend toute la largeur grâce à la classe .wide -->
+     <!-- 5ème tableau en pleine largeur pour combler l'espace -->
      <div class="art-item wide">
       <img alt="Réminiscence" src="images/art5.jpg"/>
       <div class="art-overlay">
@@ -139,7 +138,7 @@
     </div>
    </section>
 
-   <!-- SECTION ARTISTE AVEC PARTOGENÈSE (NOUVELLE IMAGE image00006.jpeg) -->
+   <!-- SECTION ARTISTE AVEC PARTOGENÈSE -->
    <section class="blue artist" id="artiste">
     <div>
      <h2>
@@ -192,7 +191,7 @@
       EMPLACEMENT ET COORDONNÉES
      </h2>
      <p>
-      18 Avenue des Champs Fleuris 06000 Nice
+      18 Avenue des Champs Fleuris
      </p>
      <p>
       04.78.03.56.33
@@ -244,5 +243,25 @@
   <footer>
    © Galerie LOUNERA — 2026
   </footer>
+
+  <!-- Script pour gérer l'appui simple tactile sur mobile -->
+  <script>
+   const artItems = document.querySelectorAll('.art-item');
+
+   artItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+     e.stopPropagation();
+     const isActive = item.classList.contains('active');
+     artItems.forEach(other => other.classList.remove('active'));
+     if (!isActive) {
+      item.classList.add('active');
+     }
+    });
+   });
+
+   document.addEventListener('click', () => {
+    artItems.forEach(item => item.classList.remove('active'));
+   });
+  </script>
  </body>
 </html>
