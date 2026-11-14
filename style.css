@@ -52,7 +52,6 @@ img {
     white-space: nowrap;
 }
 
-/* Logo rendu plus discret / plus petit */
 .logo-img {
     height: 45px;
     width: auto;
@@ -203,9 +202,11 @@ img {
     position: relative;
     overflow: hidden;
     border-radius: 4px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
-/* Permet au 5ème tableau de s'étaler sur toute la largeur de la grille */
+/* Le 5ème tableau prend toute la largeur */
 .art-item.wide {
     grid-column: 1/-1;
 }
@@ -217,7 +218,6 @@ img {
     transition: filter 0.4s ease, transform 0.4s ease;
 }
 
-/* Pour que l'image en .wide s'adapte bien en hauteur si besoin */
 .art-grid .art-item.wide img {
     height: clamp(320px, 50vw, 650px);
 }
@@ -252,12 +252,17 @@ img {
     font-weight: 300;
 }
 
-.art-item:hover img {
+/* Effet actif sur ordinateur (hover) et sur mobile (active / .active via JS) */
+.art-item:hover img,
+.art-item:active img,
+.art-item.active img {
     filter: blur(8px);
     transform: scale(1.04);
 }
 
-.art-item:hover .art-overlay {
+.art-item:hover .art-overlay,
+.art-item:active .art-overlay,
+.art-item.active .art-overlay {
     opacity: 1;
 }
 
