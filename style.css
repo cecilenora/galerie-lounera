@@ -166,14 +166,15 @@ img {
 
 .concept img {
     width: 100%;
-    height: 300px;
+    height: auto; /* Corrigé pour éviter l'écrasement du texte */
+    max-height: 320px;
     object-fit: cover;
     margin-bottom: 30px;
 }
 
 /* --- COLLECTION & ANIMATIONS PEINTURES --- */
 .collection {
-    padding: 40px 4% 100px;
+    padding: 60px 4% 100px; /* Ajout d'espace en haut pour éviter le chevauchement */
 }
 
 .collection h2 {
@@ -252,7 +253,7 @@ img {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8%;
-    padding: 55px 6%;
+    padding: 55px 6% 60px;
     font-size: 22px;
 }
 
@@ -264,7 +265,7 @@ img {
 }
 
 .contact .social {
-    margin-top: 110px;
+    margin-top: 50px; /* Réduit pour éviter d'être trop bas sur grand écran */
 }
 
 /* Style des icônes réseaux sociaux */
@@ -321,14 +322,15 @@ img {
 
 .contact-form small {
     display: block;
-    margin-top: 20px;
+    margin-top: 15px;
+    margin-bottom: 10px;
     font-size: 15px;
 }
 
 /* --- FOOTER PROPRE --- */
 footer {
     text-align: center;
-    padding: 30px;
+    padding: 25px;
     font-size: 18px;
     background: #fff;
     color: #555;
@@ -365,7 +367,8 @@ footer {
     }
 
     .concept img {
-        height: 220px;
+        height: auto;
+        max-height: 250px;
     }
 
     .artist {
@@ -388,10 +391,10 @@ footer {
     }
 
     .collection {
-        padding: 40px 5%;
+        padding: 50px 5%; /* Remet de l'air pour éviter la collision du texte bleu */
     }
 
     .contact .social {
-        margin-top: 45px;
+        margin-top: 30px; /* Supprime le gros espace vide sur mobile */
     }
 }
