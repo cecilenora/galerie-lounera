@@ -8,11 +8,9 @@
   </title>
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <!-- Remplacez l'URL Google Fonts ci-dessous par votre nouvelle typographie si besoin -->
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet"/>
-  <!-- Lien vers Font Awesome pour les logos Instagram / LinkedIn -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-  <link href="style.css" rel="stylesheet"/>
+  <link href="style.css?v=3" rel="stylesheet"/>
  </head>
  <body>
   <header class="header">
@@ -87,6 +85,8 @@
      </p>
     </div>
    </section>
+   
+   <!-- SECTION COLLECTION AVEC EFFET FLOU + NOM + PRIX -->
    <section class="collection" id="collection">
     <h2>
      NOTRE COLLECTION
@@ -95,13 +95,82 @@
      Œuvres de la saison
     </p>
     <div class="art-grid">
-     <img alt="Œuvre psychédélique multicolore" src="images/art1.jpg"/>
-     <img alt="Paysage au coucher du soleil" src="images/art2.jpg"/>
-     <img alt="Peinture abstraite rouge" src="images/art3.jpg"/>
-     <img alt="Figure turquoise sur fond sombre" src="images/art4.jpg"/>
-     <img alt="Peinture colorée aux visages et motifs de plumes" class="wide" src="images/art5.jpg"/>
+     
+     <div class="art-item">
+      <img alt="Mindset" src="images/art1.jpg"/>
+      <div class="art-overlay">
+       <span class="art-name">Mindset</span>
+       <span class="art-price">100 €</span>
+      </div>
+     </div>
+
+     <div class="art-item">
+      <img alt="Caméléon" src="images/art2.jpg"/>
+      <div class="art-overlay">
+       <span class="art-name">Caméléon</span>
+       <span class="art-price">90 €</span>
+      </div>
+     </div>
+
+     <div class="art-item">
+      <img alt="Colère" src="images/art3.jpg"/>
+      <div class="art-overlay">
+       <span class="art-name">Colère</span>
+       <span class="art-price">50 €</span>
+      </div>
+     </div>
+
+     <div class="art-item">
+      <img alt="Sous les glycines" src="images/art4.jpg"/>
+      <div class="art-overlay">
+       <span class="art-name">Sous les glycines</span>
+       <span class="art-price">80 €</span>
+      </div>
+     </div>
+
+     <div class="art-item">
+      <img alt="Sunset" src="images/art5.jpg"/>
+      <div class="art-overlay">
+       <span class="art-name">Sunset</span>
+       <span class="art-price">80 €</span>
+      </div>
+     </div>
+
+     <div class="art-item">
+      <img alt="Réminiscence" src="images/art6.jpg"/>
+      <div class="art-overlay">
+       <span class="art-name">Réminiscence</span>
+       <span class="art-price">300 €</span>
+      </div>
+     </div>
+
+     <div class="art-item">
+      <img alt="Partogenèse" src="images/art7.jpg"/>
+      <div class="art-overlay">
+       <span class="art-name">Partogenèse</span>
+       <span class="art-price">90 €</span>
+      </div>
+     </div>
+
+     <div class="art-item">
+      <img alt="Maya" src="images/art8.jpg"/>
+      <div class="art-overlay">
+       <span class="art-name">Maya</span>
+       <span class="art-price">400 €</span>
+      </div>
+     </div>
+
+     <div class="art-item wide">
+      <img alt="Jerba" src="images/art9.jpg"/>
+      <div class="art-overlay">
+       <span class="art-name">Jerba</span>
+       <span class="art-price">80 €</span>
+      </div>
+     </div>
+
     </div>
    </section>
+
    <section class="blue artist" id="artiste">
     <div>
      <h2>
@@ -159,7 +228,6 @@
      <h2 class="social">
       SUIVEZ-NOUS
      </h2>
-     <!-- Logos Instagram et LinkedIn propres -->
      <div class="reseaux-sociaux">
       <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
        <i class="fa-brands fa-instagram"></i>
